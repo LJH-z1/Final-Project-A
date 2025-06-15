@@ -1,16 +1,15 @@
 version: '3.8'
 
 services:
-  # 你的个人网站
   my-website:
     build: .
     ports:
       - "8080:80"
     restart: unless-stopped
 
-  # 替换为兼容的 Todo 应用（示例：TodoMVC）
+  # 使用 `docker/getting-started` 镜像（官方示例，含 Todo 功能）
   todo-app:
-    image: tastejs/todomvc  # 使用官方 TodoMVC 镜像
+    image: docker/getting-started
     ports:
       - "8081:80"
     restart: unless-stopped
