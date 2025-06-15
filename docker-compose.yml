@@ -5,12 +5,12 @@ services:
   my-website:
     build: .
     ports:
-      - "8080:80"  # 访问 http://localhost:8080
+      - "8080:80"
     restart: unless-stopped
 
-  # Todo 应用（示例：使用现成的 Todo 镜像）
+  # 替换为兼容的 Todo 应用（示例：TodoMVC）
   todo-app:
-    image: alexwhen/docker-2048  # 示例，可替换为其他 Todo 镜像
+    image: tastejs/todomvc  # 使用官方 TodoMVC 镜像
     ports:
-      - "8081:80"  # 访问 http://localhost:8081
+      - "8081:80"
     restart: unless-stopped
