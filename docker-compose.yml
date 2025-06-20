@@ -1,18 +1,13 @@
 version: '3.8'
-
 services:
   personal-website:
-    build: .
-    container_name: personal-website
+    build: .          # 使用当前目录的 Dockerfile
     ports:
-      - "8082:80"
+      - "8080:80"     # 个人网站访问端口: 8080
     restart: always
-  
+
   todo-app:
-    image: rudipailer/todo-app:latest
-    container_name: todo-app
+    image: docker.io/amir20/finall_lab:latest  # 示例 Todo App（可替换）
     ports:
-      - "8083:3000"
+      - "3000:80"     # Todo App 访问端口: 3000
     restart: always
-    environment:
-      - NODE_ENV=production
