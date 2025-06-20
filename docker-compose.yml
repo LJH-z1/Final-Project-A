@@ -1,15 +1,18 @@
 version: '3.8'
 
 services:
-  my-website:
+  personal-website:
     build: .
+    container_name: personal-website
     ports:
-      - "8080:80"
-    restart: unless-stopped
-
-  # 使用 `docker/getting-started` 镜像（官方示例，含 Todo 功能）
+      - "8082:80"
+    restart: always
+  
   todo-app:
-    image: docker/getting-started
+    image: rudipailer/todo-app:latest
+    container_name: todo-app
     ports:
-      - "8081:80"
-    restart: unless-stopped
+      - "8083:3000"
+    restart: always
+    environment:
+      - NODE_ENV=production
