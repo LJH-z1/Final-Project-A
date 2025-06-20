@@ -23,6 +23,11 @@ jobs:
         push: true
         tags: ${{ secrets.DOCKER_HUB_USERNAME }}/finall_lab:latest
     
+    - name: 测试SSH连接
+      run: |
+        echo "正在测试服务器连接..."
+        timeout 5 bash -c "</dev/tcp/${{ secrets.SSH_HOST }}/22" && echo "端口开放" || echo "端口关闭"
+    
     - name: SSH and deploy
       uses: appleboy/ssh-action@master
       with:
