@@ -6,8 +6,8 @@
 - **Photo:** ![My Photo](zzz.png)
 
 ## Application URLs
-1. Personal Website: http://your-server-ip:8080
-2. Todo App: http://your-server-ip:3000
+1. Personal Website: http://47.111.111.188:8081/
+2. Todo App: http://47.111.111.188:8082/
 
 ## How to Run
 ```bash
